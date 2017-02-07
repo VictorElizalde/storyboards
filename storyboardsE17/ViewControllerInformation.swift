@@ -12,10 +12,6 @@ class ViewControllerInformation: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var sphereImage: UIImageView!
     
-    var imagen : UIImage!
-    var ancho : CGFloat!
-    var altura : CGFloat!
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if sender as! UIButton == saveButton {
@@ -47,6 +43,11 @@ class ViewControllerInformation: UIViewController {
         return true
     }
 
+    @IBAction func awayKeyboard(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

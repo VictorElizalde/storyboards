@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     @IBAction func unwindInformation(unwindSegue : UIStoryboardSegue) {
         
-        infoLabel.text = "Radio = \(radius)"
+        infoLabel.text = "Radio = \(radius ?? "")"
         imgFoto.image = image
         volumeLabel.text = volume
         
@@ -38,12 +38,18 @@ class ViewController: UIViewController {
     
     @IBAction func unwindEditar(unwindSegue : UIStoryboardSegue) {
         
-        infoLabel.text = "largo = \(largo)\nancho = \(ancho)\naltura = \(altura)"
+        infoLabel.text = "largo = \(largo ?? "")\nancho = \(ancho ?? "")\naltura = \(altura ?? "")"
         imgFoto.image = image
         volumeLabel.text = volume
         
     }
     
+
+    @IBAction func awayKeyboard(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

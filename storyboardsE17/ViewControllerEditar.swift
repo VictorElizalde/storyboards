@@ -47,6 +47,12 @@ class ViewControllerEditar: UIViewController {
         return true
     }
     
+    @IBAction func awayKeyboard(_ sender: UITapGestureRecognizer) {
+        
+        view.endEditing(true)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

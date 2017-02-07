@@ -41,8 +41,8 @@
                                     <segue destination="QGZ-I5-HGO" kind="presentation" identifier="editar" id="MgP-3n-OGJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volúmen:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-40-8fN">
-                                <rect key="frame" x="49" y="501" width="72" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volúmen =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iic-40-8fN">
+                                <rect key="frame" x="71" y="501" width="82" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -71,7 +71,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlI-HW-LpP">
-                                <rect key="frame" x="148" y="501" width="94" height="21"/>
+                                <rect key="frame" x="161" y="500" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -79,6 +79,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92196772318438458" blue="0.63893488772858009" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                     </view>
                     <connections>
                         <outlet property="imgFoto" destination="w5m-SP-wyN" id="ABN-ZS-SiS"/>
@@ -87,6 +88,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Py7-Lr-UwY">
+                    <connections>
+                        <action selector="awayKeyboard:" destination="BYZ-38-t0r" id="ZN8-Um-9Cx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
@@ -127,7 +133,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6el-za-8Qc">
                                 <rect key="frame" x="68" y="414" width="57" height="21"/>
@@ -138,6 +144,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.77951914756063501" green="0.99418454642436938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="97a-kL-SBi" appends="YES" id="XPQ-Cf-xNE"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="radiusTF" destination="z08-cs-4xT" id="fGT-3N-j2i"/>
@@ -147,6 +157,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nlg-Sa-gcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0HT-wp-BR4" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="97a-kL-SBi">
+                    <connections>
+                        <action selector="awayKeyboard:" destination="qP5-CE-vtF" id="tP9-dM-Cxg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="945" y="-203"/>
         </scene>
@@ -181,14 +196,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dse-rd-HoQ">
                                 <rect key="frame" x="128" y="490" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I23-Xk-CzE">
                                 <rect key="frame" x="240" y="582" width="56" height="30"/>
@@ -218,7 +233,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prisma" translatesAutoresizingMaskIntoConstraints="NO" id="kgj-8C-j3j">
                                 <rect key="frame" x="67" y="73" width="240" height="250"/>
@@ -226,6 +241,10 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.61529758649285782" green="1" blue="0.63031472112751796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HNc-bP-CBz" appends="YES" id="ygC-YA-Q98"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="alturaTF" destination="dse-rd-HoQ" id="3Ig-aJ-c7n"/>
@@ -238,6 +257,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWJ-uZ-5AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="O55-Vr-LYq" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="HNc-bP-CBz">
+                    <connections>
+                        <action selector="awayKeyboard:" destination="QGZ-I5-HGO" id="dia-aP-bBe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="946" y="594"/>
         </scene>
