@@ -1,30 +1,56 @@
 //
 //  ViewControllerInformation.swift
 //  storyboardsE17
-//
-//  Created by alumno on 1/30/17.
-//  Copyright © 2017 com.itesm. All rights reserved.
-//
+
 
 import UIKit
+import Darwin
 
 class ViewControllerInformation: UIViewController {
 
-//    @IBOutlet weak var imgFoto: UIImageView!
-//    @IBOutlet weak var lbAncho: UILabel!
-//    @IBOutlet weak var lbAltura: UILabel!
     @IBOutlet weak var radiusTF: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var sphereImage: UIImageView!
     
     var imagen : UIImage!
     var ancho : CGFloat!
     var altura : CGFloat!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if sender as! UIButton == saveButton {
+            
+            let vistaInic = segue.destination as! ViewController
+            vistaInic.image = sphereImage.image
+            vistaInic.radius = radiusTF.text!
+            vistaInic.volume = String(((4/3)*Float.pi)*(pow(Float(radiusTF.text!)!, 3)))
+            
+        }
+        
+        // si se oprime cancelar no se hace nada
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if sender as? UIButton == saveButton {
+            
+            if radiusTF.text! == "" {
+                
+                let alerta = UIAlertController(title: "Error", message: "Los campos deben tener datos", preferredStyle: .alert)
+                alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                present(alerta, animated: true, completion: nil)
+                return false
+                
+            }
+            
+        }
+        return true
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        imgFoto.image = imagen
-//        lbAncho.text = String(describing: ancho!)
-//        lbAltura.text = String(describing: altura!)
     }
 
     override func didReceiveMemoryWarning() {

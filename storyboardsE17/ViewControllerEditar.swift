@@ -1,34 +1,29 @@
 //
 //  ViewControllerEditar.swift
 //  storyboardsE17
-//
-//  Created by alumno on 1/30/17.
-//  Copyright © 2017 com.itesm. All rights reserved.
-//
+
 
 import UIKit
 
 class ViewControllerEditar: UIViewController {
 
-    
-//    @IBOutlet weak var tfNombre: UITextField!
-//    @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var largoTF: UITextField!
     @IBOutlet weak var anchoTF: UITextField!
     @IBOutlet weak var alturaTF: UITextField!
     @IBOutlet weak var btCancelar: UIButton!
     @IBOutlet weak var btGuardar: UIButton!
-    
-    var nombre : String!
-    var email : String!
+    @IBOutlet weak var prismImage: UIImageView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if sender as! UIButton == btGuardar {
             
             let vistaInic = segue.destination as! ViewController
-//            vistaInic.nombre = tfNombre.text!
-//            vistaInic.email = tfEmail.text!
+            vistaInic.image = prismImage.image
+            vistaInic.largo = largoTF.text!
+            vistaInic.ancho = anchoTF.text!
+            vistaInic.altura = alturaTF.text!
+            vistaInic.volume = String(Float(largoTF.text!)!*Float(anchoTF.text!)!*Float(alturaTF.text!)!)
             
         }
         
@@ -55,8 +50,6 @@ class ViewControllerEditar: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        tfNombre.text = nombre
-//        tfEmail.text = email
     }
 
     override func didReceiveMemoryWarning() {

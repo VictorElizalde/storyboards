@@ -1,61 +1,49 @@
 //
 //  ViewController.swift
 //  storyboardsE17
-//
-//  Created by Yolanda Martinez on 1/25/17.
-//  Copyright © 2017 com.itesm. All rights reserved.
-//
+
 
 import UIKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var imgFoto: UIImageView!
-    @IBOutlet weak var tfNombre: UITextField!
-    @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var infoLabel: UILabel!
-    
-//    var nombre : String!
-//    var email : String!
+    @IBOutlet weak var volumeLabel: UILabel!
     
     var largo : String!
     var ancho : String!
     var altura : String!
+    var radius : String!
+    var image : UIImage!
+    var volume : String!
+    
+    
+    @IBAction func inicioButton(_ sender: UIButton) {
+        
+        imgFoto.image = UIImage(named: "cuerpos")
+        infoLabel.text = ""
+        volumeLabel.text = ""
+        
+    }
     
     @IBAction func unwindInformation(unwindSegue : UIStoryboardSegue) {
         
-        //vacio intencionalmente
-        //solo se usa para regresar
+        infoLabel.text = "Radio = \(radius)"
+        imgFoto.image = image
+        volumeLabel.text = volume
         
     }
 
     
     @IBAction func unwindEditar(unwindSegue : UIStoryboardSegue) {
         
-//        tfNombre.text = nombre
-//        tfEmail.text = email
-        infoLabel.text = "largo = \(largo)\n ancho = \(ancho)\n altura = \(altura)"
+        infoLabel.text = "largo = \(largo)\nancho = \(ancho)\naltura = \(altura)"
+        imgFoto.image = image
+        volumeLabel.text = volume
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "info" {
-            
-            let vistaInfo = segue.destination as! ViewControllerInformation
-//            vistaInfo.imagen = imgFoto.image
-//            vistaInfo.ancho = imgFoto.frame.size.width
-//            vistaInfo.altura = imgFoto.frame.size.height
-            
-        } else {
-            
-            let vistaEditar = segue.destination as! ViewControllerEditar
-//            vistaEditar.nombre = tfNombre.text!
-//            vistaEditar.email = tfEmail.text!
-            
-        }
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

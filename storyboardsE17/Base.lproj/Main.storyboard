@@ -34,9 +34,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-d8-OQp">
-                                <rect key="frame" x="277" y="542" width="40" height="30"/>
+                                <rect key="frame" x="274" y="542" width="47" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Editar"/>
+                                <state key="normal" title="Prisma"/>
                                 <connections>
                                     <segue destination="QGZ-I5-HGO" kind="presentation" identifier="editar" id="MgP-3n-OGJ"/>
                                 </connections>
@@ -52,18 +52,28 @@
                                 <rect key="frame" x="55" y="542" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Inicio"/>
+                                <connections>
+                                    <action selector="inicioButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G3h-bf-VbU"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-Qs-UXd">
-                                <rect key="frame" x="71" y="390" width="29" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datos del usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-F2-MkH">
+                                <rect key="frame" x="94" y="53" width="186" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjf-Qs-UXd">
+                                <rect key="frame" x="71" y="369" width="232" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datos del usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-F2-MkH">
-                                <rect key="frame" x="94" y="53" width="186" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlI-HW-LpP">
+                                <rect key="frame" x="148" y="501" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -72,7 +82,8 @@
                     </view>
                     <connections>
                         <outlet property="imgFoto" destination="w5m-SP-wyN" id="ABN-ZS-SiS"/>
-                        <outlet property="infoLabel" destination="mjf-Qs-UXd" id="kFc-9E-rcI"/>
+                        <outlet property="infoLabel" destination="mjf-Qs-UXd" id="0hL-zj-Wbm"/>
+                        <outlet property="volumeLabel" destination="VlI-HW-LpP" id="eiT-b0-gNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,6 +118,9 @@
                                 <rect key="frame" x="66" y="516" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <segue destination="0HT-wp-BR4" kind="unwind" unwindAction="unwindInformationWithUnwindSegue:" id="uhn-gi-dGl"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z08-cs-4xT">
                                 <rect key="frame" x="204" y="411" width="97" height="30"/>
@@ -127,12 +141,14 @@
                     </view>
                     <connections>
                         <outlet property="radiusTF" destination="z08-cs-4xT" id="fGT-3N-j2i"/>
+                        <outlet property="saveButton" destination="DOR-31-wET" id="gNQ-uw-C7y"/>
+                        <outlet property="sphereImage" destination="3Hh-Ft-3KU" id="wEo-k4-JCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nlg-Sa-gcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0HT-wp-BR4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="946.39999999999998" y="-66.11694152923539"/>
+            <point key="canvasLocation" x="945" y="-203"/>
         </scene>
         <!--View Controller Editar-->
         <scene sceneID="P7B-MS-30T">
@@ -217,12 +233,13 @@
                         <outlet property="btCancelar" destination="w2T-1O-xUp" id="P3u-zH-ewy"/>
                         <outlet property="btGuardar" destination="I23-Xk-CzE" id="hWZ-Gi-0d4"/>
                         <outlet property="largoTF" destination="6P0-Od-6Xu" id="0Vh-Gz-The"/>
+                        <outlet property="prismImage" destination="kgj-8C-j3j" id="8KP-yc-H3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWJ-uZ-5AH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="O55-Vr-LYq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="946.39999999999998" y="682.3088455772114"/>
+            <point key="canvasLocation" x="946" y="594"/>
         </scene>
     </scenes>
     <resources>
