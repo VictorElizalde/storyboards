@@ -11,8 +11,11 @@ import UIKit
 class ViewControllerEditar: UIViewController {
 
     
-    @IBOutlet weak var tfNombre: UITextField!
-    @IBOutlet weak var tfEmail: UITextField!
+//    @IBOutlet weak var tfNombre: UITextField!
+//    @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var largoTF: UITextField!
+    @IBOutlet weak var anchoTF: UITextField!
+    @IBOutlet weak var alturaTF: UITextField!
     @IBOutlet weak var btCancelar: UIButton!
     @IBOutlet weak var btGuardar: UIButton!
     
@@ -24,8 +27,8 @@ class ViewControllerEditar: UIViewController {
         if sender as! UIButton == btGuardar {
             
             let vistaInic = segue.destination as! ViewController
-            vistaInic.nombre = tfNombre.text!
-            vistaInic.email = tfEmail.text!
+//            vistaInic.nombre = tfNombre.text!
+//            vistaInic.email = tfEmail.text!
             
         }
         
@@ -36,7 +39,7 @@ class ViewControllerEditar: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if sender as? UIButton == btGuardar {
             
-            if tfNombre.text! == "" || tfEmail.text! == "" {
+            if largoTF.text! == "" || anchoTF.text! == "" || alturaTF.text! == "" {
                 
                 let alerta = UIAlertController(title: "Error", message: "Los campos deben tener datos", preferredStyle: .alert)
                 alerta.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -52,8 +55,8 @@ class ViewControllerEditar: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tfNombre.text = nombre
-        tfEmail.text = email
+//        tfNombre.text = nombre
+//        tfEmail.text = email
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,9 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgFoto: UIImageView!
     @IBOutlet weak var tfNombre: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
+    @IBOutlet weak var infoLabel: UILabel!
     
-    var nombre : String!
-    var email : String!
+//    var nombre : String!
+//    var email : String!
+    
+    var largo : String!
+    var ancho : String!
+    var altura : String!
     
     @IBAction func unwindInformation(unwindSegue : UIStoryboardSegue) {
         
@@ -27,8 +32,9 @@ class ViewController: UIViewController {
     
     @IBAction func unwindEditar(unwindSegue : UIStoryboardSegue) {
         
-        tfNombre.text = nombre
-        tfEmail.text = email
+//        tfNombre.text = nombre
+//        tfEmail.text = email
+        infoLabel.text = "largo = \(largo)\n ancho = \(ancho)\n altura = \(altura)"
         
     }
     
@@ -37,15 +43,15 @@ class ViewController: UIViewController {
         if segue.identifier == "info" {
             
             let vistaInfo = segue.destination as! ViewControllerInformation
-            vistaInfo.imagen = imgFoto.image
-            vistaInfo.ancho = imgFoto.frame.size.width
-            vistaInfo.altura = imgFoto.frame.size.height
+//            vistaInfo.imagen = imgFoto.image
+//            vistaInfo.ancho = imgFoto.frame.size.width
+//            vistaInfo.altura = imgFoto.frame.size.height
             
         } else {
             
             let vistaEditar = segue.destination as! ViewControllerEditar
-            vistaEditar.nombre = tfNombre.text!
-            vistaEditar.email = tfEmail.text!
+//            vistaEditar.nombre = tfNombre.text!
+//            vistaEditar.email = tfEmail.text!
             
         }
         

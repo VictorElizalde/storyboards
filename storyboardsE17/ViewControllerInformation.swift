@@ -10,9 +10,10 @@ import UIKit
 
 class ViewControllerInformation: UIViewController {
 
-    @IBOutlet weak var imgFoto: UIImageView!
-    @IBOutlet weak var lbAncho: UILabel!
-    @IBOutlet weak var lbAltura: UILabel!
+//    @IBOutlet weak var imgFoto: UIImageView!
+//    @IBOutlet weak var lbAncho: UILabel!
+//    @IBOutlet weak var lbAltura: UILabel!
+    @IBOutlet weak var radiusTF: UITextField!
     
     var imagen : UIImage!
     var ancho : CGFloat!
@@ -21,9 +22,9 @@ class ViewControllerInformation: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        imgFoto.image = imagen
-        lbAncho.text = String(describing: ancho!)
-        lbAltura.text = String(describing: altura!)
+//        imgFoto.image = imagen
+//        lbAncho.text = String(describing: ancho!)
+//        lbAltura.text = String(describing: altura!)
     }
 
     override func didReceiveMemoryWarning() {
